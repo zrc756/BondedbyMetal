@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Your Appointment</title>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9f9f9;
+      padding: 40px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    .form-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+      margin-top: 20px;
+      display: block;
+    }
+    input, button, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .time-slots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .slot {
+      padding: 10px 20px;
+      background-color: #eee;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      flex: 1 0 30%;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .slot:hover {
+      border-color: #D4AF37;
+    }
+    .slot.selected {
+      background-color: #D4AF37;
+      color: white;
+      border-color: #D4AF37;
+    }
+    button {
+      background-color: #D4AF37;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Book Your Appointment</h1>
+<div class="form-wrapper">
+  <form id="bookingForm">
+    <label for="date">Choose a Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label>Select a Time Slot:</label>
+    <div class="time-slots" id="slotContainer">
+      <div class="slot">10:00 AM</div>
+      <div class="slot">10:30 AM</div>
+      <div class="slot">11:00 AM</div>
+      <div class="slot">11:30 AM</div>
+      <div class="slot">12:00 PM</div>
+      <div class="slot">12:30 PM</div>
+    </div>
+    <input type="hidden" id="selectedTime" name="time" required>
+
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="submit">Submit Booking</button>
+  </form>
+</div>
+
+<script>
+  const slots = document.querySelectorAll('.slot');
+  const selectedTimeInput = document.getElementById('selectedTime');
+
+  slots.forEach(slot => {
+    slot.addEventListener('click', () => {
+      slots.forEach(s => s.classList.remove('selected'));
+      slot.classList.add('selected');
+      selectedTimeInput.value = slot.textContent;
+    });
+  });
+
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    if (!selectedTimeInput.value) {
+      alert('Please select a time slot.');
+      e.preventDefault();
+    } else {
+      const date = document.getElementById('date').value;
+      alert('Booking submitted for ' + date + ' at ' + selectedTimeInput.value + '!');
+    }
+  });
+</script>
+
+</body>
+</html>
