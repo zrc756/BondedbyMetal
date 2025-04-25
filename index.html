@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonded by Metal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #222222;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #222222;
+            font-weight: bold;
+        }
+        .hero {
+            height: 90vh;
+            background: url('https://images.unsplash.com/photo-1590080877634-3cdd15722815?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+        }
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #D4AF37;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .collections img {
+            width: 250px;
+            height: auto;
+            margin: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+        .collections img:hover {
+            transform: scale(1.05);
+        }
+        .booking button {
+            background-color: #D4AF37;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            background: #222222;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Bonded by Metal</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#collections">Collections</a>
+            <a href="#book">Book Now</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Jewelry That Lasts Forever</h1>
+        <button onclick="location.href='#book'">Book Your Experience</button>
+    </div>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Bonded by Metal, we craft permanent jewelry that symbolizes enduring connections. Custom-fit, clasp-free, and seamlessly welded – our pieces are made to last as long as your most cherished memories.</p>
+    </section>
+
+    <section id="collections" class="collections">
+        <h2>Our Collections</h2>
+        <div>
+            <img src="https://images.unsplash.com/photo-1590080877634-3cdd15722815?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gold Chain">
+            <img src="https://images.unsplash.com/photo-1579644590884-564b2b71c512?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Silver Bracelet">
+            <img src="https://images.unsplash.com/photo-1619983081605-03c3f708f370?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gemstone Jewelry">
+        </div>
+    </section>
+
+    <section id="book" class="booking">
+        <h2>Book Your Appointment</h2>
+        <p>Ready to get bonded? Book your 30-minute appointment today and create a piece of jewelry that's uniquely yours.</p>
+        <button onclick="location.href='mailto:info@bondedbymetal.com'">Book Now</button>
+    </section>
+
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <p><strong>Does it hurt?</strong><br>No, the process is painless and quick!</p>
+        <p><strong>Is it really permanent?</strong><br>Yes, but you can remove it if necessary with scissors.</p>
+        <p><strong>What materials do you use?</strong><br>We use 14k gold, sterling silver, and high-quality chains.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:info@bondedbymetal.com">info@bondedbymetal.com</a></p>
+        <p>Instagram: @bondedbymetal</p>
+    </section>
+
+    <footer>
+        &copy; 2025 Bonded by Metal. All Rights Reserved.
+    </footer>
+</body>
+</html>
